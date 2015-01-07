@@ -387,7 +387,8 @@ EventTree::EventTree(TTree *tree) : fChain(0)
          f = new TFile("root://eoscms.cern.ch//eos/cms/store/group/phys_egamma/cmkuo/CSA14/V07-00-06-01/job_spring14_gjet_20bx25.root");
          //TFile *f = TFile::Open("root://eoscms.cern.ch//eos/cms/store/group/phys_egamma/cmkuo/CSA14/V07-00-06-01/job_spring14_gjet_20bx25.root");
       }
-      TDirectory * dir = (TDirectory*)f->Get("root://eoscms.cern.ch//eos/cms/store/group/phys_egamma/cmkuo/CSA14/V07-00-06-01/job_spring14_gjet_20bx25.root:/ggNtuplizer");
+      //TDirectory * dir = (TDirectory*)f->Get("root://eoscms.cern.ch//eos/cms/store/group/phys_egamma/cmkuo/CSA14/V07-00-06-01/job_spring14_gjet_20bx25.root:/ggNtuplizer");
+      TDirectory * dir = (TDirectory*)f->Get("ggNtuplizer");
       dir->GetObject("EventTree",tree);
 
    }
