@@ -33,8 +33,8 @@ void EventTree::Loop()
 
    Long64_t nentries = fChain->GetEntriesFast();
    
-   TH1F *hist1=new TH1F("hist1","nPho",10000,0,200);
-   TH1F *hist2=new TH1F("hist2","nMu",10000,0,200);
+   TH1F *hist1=new TH1F("hist1","nPho",10000,0,10);
+   TH1F *hist2=new TH1F("hist2","nMu",10000,0,5);
 
    printf("nentries1=%lld\n",nentries);
    Long64_t nbytes = 0, nb = 0;
