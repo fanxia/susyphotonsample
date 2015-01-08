@@ -32,6 +32,9 @@ void EventTree::Loop()
    if (fChain == 0) return;
 
    Long64_t nentries = fChain->GetEntriesFast();
+   
+   TH1F *hist1=new TH1F("hist1","nPho",10000,0,200);
+   TH1F *hist2=new TH1F("hist2","nMu",10000,0,200);
 
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
@@ -39,5 +42,13 @@ void EventTree::Loop()
       if (ientry < 0) break;
       nb = fChain->GetEntry(jentry);   nbytes += nb;
       // if (Cut(ientry) < 0) continue;
+      
+      hist1->Fill(nPho);
+      hist2->Fill(nMu);
    }
+   
+   hist1->Draw();
+   hist2->Draw("Same");
+   
+   printf("nentries=%lld\n",nentries);
 }
