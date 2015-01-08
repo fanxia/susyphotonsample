@@ -36,7 +36,7 @@ void EventTree::Loop()
    TH1F *hist1=new TH1F("hist1","nPho",10000,0,200);
    TH1F *hist2=new TH1F("hist2","nMu",10000,0,200);
 
-   printf("nentries=%lld\n",nentries);
+   printf("nentries1=%lld\n",nentries);
    Long64_t nbytes = 0, nb = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
       Long64_t ientry = LoadTree(jentry);
@@ -47,9 +47,10 @@ void EventTree::Loop()
       hist1->Fill(nPho);
       hist2->Fill(nMu);
    }
+   printf("nentries2=%lld\n",nentries);
    
    hist1->Draw();
    hist2->Draw("Same");
    
-   printf("nentries=%lld\n",nentries);
+   printf("nentries3=%lld\n",nentries);
 }
