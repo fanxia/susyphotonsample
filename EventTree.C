@@ -5,7 +5,7 @@
 #include <TCanvas.h>
 
 void EventTree::Loop()
-{ fffff
+{
 //   In a ROOT session, you can do:
 //      Root > .L EventTree.C
 //      Root > EventTree t
